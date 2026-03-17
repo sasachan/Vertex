@@ -1,0 +1,62 @@
+# ===========================
+# Vertex — Python .gitignore
+# ===========================
+
+# ---------- Byte-compiled / optimised ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ---------- Virtual environments ----------
+.venv/
+venv/
+ENV/
+
+# ---------- Distribution / packaging ----------
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# ---------- ML model files (large binaries — download separately) ----------
+*.task
+*.tflite
+*.onnx
+*.pb
+*.engine
+
+# ---------- Session data (generated at runtime) ----------
+sessions/
+
+# ---------- IDE / editor ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ---------- OS ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+# ---------- Testing / coverage ----------
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# ---------- Misc ----------
+*.log
+*.bak
+*.tmp
+.env
+.env.local
