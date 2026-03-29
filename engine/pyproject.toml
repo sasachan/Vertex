@@ -1,6 +1,6 @@
 [project]
 name = "vertex"
-version = "0.2.0"
+version = "0.3.0"
 description = "Vertex — Sports-science AI platform. TheSighter: archery biomechanics."
 requires-python = ">=3.11"
 dependencies = [
@@ -11,11 +11,13 @@ dependencies = [
 
 [project.optional-dependencies]
 viz = ["matplotlib>=3.7.0"]
+server = ["fastapi>=0.115.0", "uvicorn[standard]>=0.34.0"]
 dev = ["pytest>=7.0.0"]
+all = ["vertex[viz,server,dev]"]
 
 [project.scripts]
 vertex = "vertex.core:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["."]

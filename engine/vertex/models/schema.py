@@ -75,6 +75,22 @@ class BioMetrics:
     hip_mid: np.ndarray
     draw_arm_angle: float
 
+    def to_dict(self) -> dict:
+        """JSON-safe dictionary."""
+        return {
+            "anchor_dist": round(self.anchor_dist, 5),
+            "hand_xy": self.hand_xy.tolist(),
+            "jaw_xy": self.jaw_xy.tolist(),
+            "bsa": round(self.bsa, 1),
+            "dea": round(self.dea, 1),
+            "shoulder_tilt": round(self.shoulder_tilt, 1),
+            "torso_lean": round(self.torso_lean, 1),
+            "draw_length": round(self.draw_length, 4),
+            "dfl_angle": round(self.dfl_angle, 1),
+            "hip_mid": self.hip_mid.tolist(),
+            "draw_arm_angle": round(self.draw_arm_angle, 1),
+        }
+
 
 @dataclass
 class StringState:
@@ -127,6 +143,11 @@ class ShotRecord:
     release_hand_angle: float = -1.0      # R_WRIST lateral trajectory angle post-release
     cv_release_detected: bool = False      # bowstring CV confirmed release
     release_confidence: str = "MEDIUM"     # HIGH / MEDIUM / LOW
+
+    def to_dict(self) -> dict:
+        """JSON-safe dictionary for WebSocket transport."""
+        from dataclasses import asdict
+        return asdict(self)
 
 
 CSV_HEADERS = [

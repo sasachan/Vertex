@@ -1,5 +1,5 @@
 # ===========================
-# Vertex — Python .gitignore
+# Vertex — .gitignore
 # ===========================
 
 # ---------- Byte-compiled / optimised ----------
@@ -29,6 +29,10 @@ dist/
 
 # ---------- Session data (generated at runtime) ----------
 sessions/
+
+# ---------- Node / Frontend ----------
+node_modules/
+ui/dist/
 
 # ---------- IDE / editor ----------
 .vscode/
